@@ -19,6 +19,10 @@ Auth::routes();
 
 Route::get('/orders', 'HomeController@index')->name('home');
 
+Route::get('/product/create', 'ProductController@create')->name('product.create');
+Route::post('/product/list', 'ProductController@list')->name('product.list');
+Route::get('/product/', 'ProductController@index')->name('product');
+
 Route::group(['prefix' => 'posts', 'middleware' => ['auth', 'AdminOnly']], function ()
 {
     Route::get('create', 'PostController@create')->name('posts.create');
