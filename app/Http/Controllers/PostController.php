@@ -19,7 +19,7 @@ class PostController extends Controller
                 'title' => 'required|min:2',
                 'content' => 'required|min:10'
             ]);
-        $file = $request->file('image');
+        $file = $request->file('photo');
         if (!empty($file)) {
             $file->move(public_path('uploads'));
         }
@@ -38,4 +38,6 @@ class PostController extends Controller
         $data['posts'] = $posts;
         return view('posts.index', $data);
     }
+
+
 }

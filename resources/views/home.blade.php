@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 class="card">
-                <h1>Мои заказы</h1>
+            <div class="card">
+                <h1>Добавить</h1>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    Мои заказы
+                        <a href="{{route('product')}}" class="btn">Товары</a>
+                        <a href="{{route('category.index')}}" class="btn">Категории</a>
                 </div>
             </div>
         </div>

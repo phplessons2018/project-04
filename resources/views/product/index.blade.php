@@ -14,8 +14,8 @@
                                     <td>{{$product->title}}</td>
                                     <td>{{$product->category}}</td>
                                     <td>{{$product->price}}</td>
-                                    <td>{{$product->photo}}</td>
                                     <td>{{$product->text}}</td>
+                                    <td><a href="{{route('product.update', [$product->id])}}">Изменить</a></td>
                                 </tr>
                             @endforeach
                         </table>

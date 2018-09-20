@@ -18,8 +18,8 @@
         <nav class="main-navigation">
             <ul class="nav-list">
                 <li class="nav-list__item"><a href="/" class="nav-list__item__link">Главная</a></li>
-                <li class="nav-list__item"><a href="{{ route('home') }}" class="nav-list__item__link">Мои заказы</a></li>
-                <li class="nav-list__item"><a href="#" class="nav-list__item__link">Новости</a></li>
+                <li class="nav-list__item"><a href="#" class="nav-list__item__link">Мои заказы</a></li>
+                <li class="nav-list__item"><a href="{{route('home')}}" class="nav-list__item__link">Админ</a></li>
                 <li class="nav-list__item"><a href="#" class="nav-list__item__link">О компании</a></li>
             </ul>
         </nav>
@@ -60,11 +60,9 @@
                 <div class="sidebar-item__title">Категории</div>
                 <div class="sidebar-item__content">
                     <ul class="sidebar-category">
-                        <li class="sidebar-category__item"><a href="#" class="sidebar-category__item__link">Action</a></li>
-                        <li class="sidebar-category__item"><a href="#" class="sidebar-category__item__link">RPG</a></li>
-                        <li class="sidebar-category__item"><a href="#" class="sidebar-category__item__link">Квесты</a></li>
-                        <li class="sidebar-category__item"><a href="#" class="sidebar-category__item__link">Онлайн-игры</a></li>
-                        <li class="sidebar-category__item"><a href="#" class="sidebar-category__item__link">Стратегии</a></li>
+                        @foreach($categories as $category)
+                        <li class="sidebar-category__item"><a href="{{$category->id}}" class="sidebar-category__item__link">{{$category->category}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -89,22 +87,8 @@
             </div>
         </div>
         <div class="main-content">
-
-
-
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-
-                </div>
-            <main class="py-4">
                 @yield('content')
-            </main>
+
 
         </div>
     </div>

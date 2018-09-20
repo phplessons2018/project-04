@@ -8,7 +8,7 @@
     <div class="content-middle">
         <div class="content-head__container">
             <div class="content-head__title-wrap">
-                <div class="content-head__title-wrap__title bcg-title">Последние товары</div>
+                <div class="content-head__title-wrap__title bcg-title">Игры в разделе action</div>
             </div>
             <div class="content-head__search-block">
                 <div class="search-container">
@@ -20,12 +20,12 @@
             </div>
         </div>
         <div class="content-main__container">
-            <div class="products-columns">
+            <div class="products-category__list">
                 @foreach($products as $product)
-                <div class="products-columns__item">
-                    <div class="products-columns__item__title-product"><a href="{{route('product.inset', [$product->id])}}" class="products-columns__item__title-product__link">{{$product->title}}</a></div>
-                    <div class="products-columns__item__thumbnail"><a href="{{route('product.inset', [$product->id])}}" class="products-columns__item__thumbnail__link"><img src="/uploads/{{$product->image}}" alt="Preview-image" class="products-columns__item__thumbnail__img"></a></div>
-                    <div class="products-columns__item__description"><span class="products-price">{{$product->price}} руб</span><a href="#" class="btn btn-blue">Купить</a></div>
+                <div class="products-category__list__item">
+                    <div class="products-category__list__item__title-product"><a href="{{route('product.inset', [$product->id])}}">{{$product->title}}</a></div>
+                    <div class="products-category__list__item__thumbnail"><a href="{{route('product.inset', [$product->id])}}" class="products-category__list__item__thumbnail__link"><img src="/uploads/{{$product->image}}" alt="Preview-image"></a></div>
+                    <div class="products-category__list__item__description"><span class="products-price">{{$product->price}} руб.</span><a href="#" class="btn btn-blue">Купить</a></div>
                 </div>
                 @endforeach
             </div>
@@ -43,4 +43,19 @@
         </div>
     </div>
     <div class="content-bottom"></div>
+    {{--<div class="container">--}}
+        {{--<div class="row justify-content-center">--}}
+            {{--<div class="col-md-8">--}}
+                {{--<div class="card">--}}
+                    {{--<div class="card-header">Post List</div>--}}
+                    {{--<a href="{{route('product.create')}}" class="btn">Добавить товар</a>--}}
+                    {{--<div class="card-body">--}}
+                        {{--<table class="table">--}}
+
+                        {{--</table>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 @endsection

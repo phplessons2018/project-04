@@ -17,30 +17,26 @@
                     </div>
 
                     <div class="card-body">
-                        <form action="{{route('product.list')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('product.edit', ['id' => $products->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <label for="">
                                 <h5>Название товара</h5>
-                                <input type="text" name="title" value="{{old('title')}}">
+                                <input type="text" name="title" value="{{$products->title}}">
                             </label>
                             <br>
                             <label for="">
                                 <h5>Категория товара</h5>
-                                <select name="category" id="">
-                                    @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->category}}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="category" value="{{$products->category}}">
                             </label>
                             <br>
                             <label for="">
                                 <h5>Цена товара</h5>
-                                <input type="text" name="price" value="{{old('price')}}">
+                                <input type="text" name="price" value="{{$products->price}}">
                             </label>
                             <br>
                             <label for="">
                                 <h5>Описание товара</h5>
-                                <textarea name="text" id="" cols="30" rows="10">{{old('text')}}</textarea><br>
+                                <textarea name="text" id="" cols="30" rows="10">{{$products->text}}</textarea><br>
                             </label>
                             <h5 class="mb-1 pb-1">Фото товара</h5>
                             <input type="file" name="image" >
